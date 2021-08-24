@@ -1,4 +1,4 @@
-package main
+package service
 
 type AccountInterface interface {
 	// AddFunds Позволяет внести на счёт сумму sum
