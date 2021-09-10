@@ -1,0 +1,126 @@
+basePath: /
+definitions:
+  swagger.UserLogin:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  swagger.UserSignUp:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - email
+    - password
+    - username
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API Server for
+  title: Bank API
+  version: "1.0"
+paths:
+  /login/:
+    post:
+      consumes:
+      - application/json
+      description: user login
+      operationId: user-login
+      parameters:
+      - description: username and password
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/swagger.UserLogin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: integer
+        "400":
+          description: Bad Request
+          schema:
+            type: integer
+        "404":
+          description: Not Found
+          schema:
+            type: integer
+        "500":
+          description: Internal Server Error
+          schema:
+            type: integer
+      summary: Login
+      tags:
+      - auth
+  /refresh-token/:
+    get:
+      consumes:
+      - application/json
+      description: refresh token
+      operationId: ref-token
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: integer
+        "500":
+          description: Internal Server Error
+          schema:
+            type: integer
+      security:
+      - ApiKeyAuth: []
+      summary: RefreshToken
+      tags:
+      - auth
+  /user/add/:
+    post:
+      consumes:
+      - application/json
+      description: create user
+      operationId: create-user
+      parameters:
+      - description: signup user
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/swagger.UserSignUp'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            type: integer
+        "400":
+          description: Bad Request
+          schema:
+            type: integer
+        "500":
+          description: Internal Server Error
+          schema:
+            type: integer
+      summary: Signup
+      tags:
+      - auth
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

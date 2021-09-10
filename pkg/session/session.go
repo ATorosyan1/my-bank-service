@@ -2,45 +2,45 @@ package session
 
 import (
 	"database/sql"
-	"fmt"
-	_ "github.com/doug-martin/goqu/v9/dialect/sqlite3"
-	_ "github.com/mattn/go-sqlite3"
+	"my-bank-service/internal/config"
+	"my-bank-service/pkg/logging"
 )
 
 const beginStatus = 1
 
-// SessionFactory Фабрика сеансов
 type SessionFactory struct {
 	*sql.DB
 }
 
 // Session Сессия сессия
 type Session struct {
-	db           *sql.DB // Собственная база данных
-	tx           *sql.Tx // Собственная транзакция
-	commitSign   int8    // Зафиксировать отметку, указать, следует ли фиксировать транзакцию
-	rollbackSign bool    // Флаг отката, определяющий, откатывать ли транзакцию
+	db           *sql.DB // Own database
+	tx           *sql.Tx // Own transaction
+	commitSign   int8    // Commit the mark, indicate if the transaction should be committed
+	rollbackSign bool    // Rollback flag that determines whether to rollback the transaction
 }
 
-// NewSessionFactory создает фабрику сеансов
-func NewSessionFactory(driverName, dataSourceName string) (*SessionFactory, error) {
-	db, err := sql.Open(driverName, dataSourceName)
+// NewSessionFactory creates a session factory
+func NewSessionFactory(driverName string) (*SessionFactory, error) {
+	logger := logging.GetLogger()
+	dataSource := config.LoadConfig(logger)
+	db, err := sql.Open(driverName, dataSource)
 	if err != nil {
-		fmt.Println(err)
+		return nil, err
 	}
 	factory := new(SessionFactory)
 	factory.DB = db
 	return factory, nil
 }
 
-// GetSession Получить сеанс
+// GetSession get a session
 func (sf *SessionFactory) GetSession() *Session {
 	session := new(Session)
 	session.db = sf.DB
 	return session
 }
 
-// Begin запускает транзакцию
+// Begin starts a transaction
 func (s *Session) Begin() error {
 	s.rollbackSign = true
 	if s.tx == nil {
@@ -56,7 +56,7 @@ func (s *Session) Begin() error {
 	return nil
 }
 
-// Rollback Откат откатывает транзакцию
+// Rollback rolls back the transaction
 func (s *Session) Rollback() error {
 	if s.tx != nil && s.rollbackSign == true {
 		err := s.tx.Rollback()
@@ -69,7 +69,7 @@ func (s *Session) Rollback() error {
 	return nil
 }
 
-// Commit Фиксация фиксирует транзакцию
+// Commit commits a transaction
 func (s *Session) Commit() error {
 	s.rollbackSign = false
 	if s.tx != nil {
@@ -88,7 +88,8 @@ func (s *Session) Commit() error {
 	return nil
 }
 
-// Exec выполняет оператор sql, если транзакция была открыта, она будет выполнена в режиме транзакции, если транзакция не открыта, она будет выполнена в нетранзакционном режиме
+// Exec executes a sql statement, if a transaction was opened, it will be executed in transaction mode,
+// if a transaction is not open, it will be executed in non-transactional mode
 func (s *Session) Exec(query string, args ...interface{}) (sql.Result, error) {
 	if s.tx != nil {
 		return s.tx.Exec(query, args...)
@@ -96,7 +97,8 @@ func (s *Session) Exec(query string, args ...interface{}) (sql.Result, error) {
 	return s.db.Exec(query, args...)
 }
 
-// QueryRow Если транзакция была открыта, она будет выполняться транзакционным способом, если транзакция не открыта, она будет выполнена нетранзакционным способом
+// QueryRow if the transaction was opened, it will be executed in a transactional way, if the transaction
+// is not open, it will be executed in a non-transactional way
 func (s *Session) QueryRow(query string, args ...interface{}) *sql.Row {
 	if s.tx != nil {
 		return s.tx.QueryRow(query, args...)
@@ -104,7 +106,8 @@ func (s *Session) QueryRow(query string, args ...interface{}) *sql.Row {
 	return s.db.QueryRow(query, args...)
 }
 
-// Query Запрос данных запроса, если транзакция была открыта, она будет выполнена в режиме транзакции, если транзакция не открыта, она будет выполнена в нетранзакционном режиме
+// Query request for request data, if the transaction was opened, it will be executed in transaction mode,
+// if the transaction is not open, it will be executed in non-transactional mode
 func (s *Session) Query(query string, args ...interface{}) (*sql.Rows, error) {
 	if s.tx != nil {
 		return s.tx.Query(query, args...)
@@ -112,7 +115,8 @@ func (s *Session) Query(query string, args ...interface{}) (*sql.Rows, error) {
 	return s.db.Query(query, args...)
 }
 
-// Prepare Подготовить предварительное выполнение, если транзакция была открыта, она будет выполнена транзакционным способом, если транзакция не открыта, она будет выполнена нетранзакционным способом
+// Prepare preliminary execution, if the transaction was opened, it will be executed in a
+// transactional way, if the transaction is not open, it will be executed in a non-transactional way
 func (s *Session) Prepare(query string) (*sql.Stmt, error) {
 	if s.tx != nil {
 		return s.tx.Prepare(query)

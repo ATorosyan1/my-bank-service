@@ -1,0 +1,4 @@
+User: "root"
+Passwd: "dlink"
+DBName: "BankServer"
+Addr: "127.0.0.1"

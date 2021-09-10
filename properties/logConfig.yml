@@ -1,0 +1,10 @@
+fileName: ./logs/%s.log
+maxSize: 50       # megabytes after which new file is created
+maxBackups: 7     # Number of backups
+maxAge: 7         # Days
+level: 5	      # Trace-6,Debug-5,Info-4,Warning-3,Error-2,Fatal-1,Panic-0
+timestampFormat: 2006/01/02 - 15:04:05
+disableLevelTruncation: true
+disableColors: false
+fullTimestamp: true
+forceColors: true

@@ -1,0 +1,113 @@
+{"@timestamp":"2021/09/10 - 13:46:07","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 13:46:11","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 13:49:25","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 13:49:25","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:10:13","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:10:13","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:12:49","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:12:49","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:28:28","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:28:28","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:29:25","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:29:25","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:30:01","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:30:01","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:30:59","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:30:59","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:31:06","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:31:06","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:32:24","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:32:24","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:32:49","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:33:00","func":"repositoryImpl.go:41","level":"error","message":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\"users\" (\"createdat\", \"email\", \"id\", \"password\", \"tokenhash\", \"updatedat\", \"user' at line 1","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:33:18","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:33:18","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:33:19","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:33:59","func":"repositoryImpl.go:41","level":"error","message":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\"users\" (\"createdat\", \"email\", \"id\", \"password\", \"tokenhash\", \"updatedat\", \"user' at line 1","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:34:42","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:34:42","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:34:45","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:35:13","func":"repositoryImpl.go:42","level":"error","message":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\"users\" (\"createdat\", \"email\", \"id\", \"password\", \"tokenhash\", \"updatedat\", \"user' at line 1","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:38:03","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:38:03","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:38:07","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:38:29","func":"auth.go:210","level":"debug","message":"user created successfully","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:45:44","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:45:44","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:46:29","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:46:33","func":"repositoryImpl.go:102","level":"error","message":"sql: expected 7 destination arguments in Scan, not 8","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:46:46","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:46:46","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:46:47","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:47:58","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:47:58","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:48:00","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:48:08","func":"auth.go:57","level":"debug","message":"password hashes are not same","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:48:11","func":"auth.go:141","level":"debug","message":"Authetication of user failed","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:50:51","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:50:51","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:51:27","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:51:27","func":"auth.go:210","level":"debug","message":"user created successfully","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:51:44","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:51:48","func":"auth.go:57","level":"debug","message":"password hashes are not same","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:51:57","func":"auth.go:141","level":"debug","message":"Authetication of user failed","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:52:48","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:52:48","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:52:50","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:54:04","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:54:04","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:54:06","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:54:41","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:54:41","func":"config.go:31","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:54:42","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 14:54:48","func":"auth.go:162","level":"debug","message":"successfully generated tokens","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:01:22","func":"app.go:37","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:01:22","func":"config.go:27","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:01:25","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:01:26","func":"auth.go:164","level":"debug","message":"successfully generated tokens","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:07:13","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:07:13","func":"config.go:64","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:07:19","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:07:19","func":"auth.go:164","level":"debug","message":"successfully generated tokens","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:35:55","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:35:55","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:36:06","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:36:06","func":"userRepositoryImpl.go:43","level":"error","message":"Error 1062: Duplicate entry 'admin' for key 'users_userName_uindex'","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:36:06","func":"auth.go:199","level":"error","message":"unable to insert user to databaseerrorError 1062: Duplicate entry 'admin' for key 'users_userName_uindex'","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:36:35","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:36:35","func":"userRepositoryImpl.go:63","level":"error","message":"Error 1265: Data truncated for column 'user_id' at row 1","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:36:35","func":"auth.go:199","level":"error","message":"unable to insert user to databaseerrorError 1265: Data truncated for column 'user_id' at row 1","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:37:04","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:37:04","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:37:07","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:37:07","func":"userRepositoryImpl.go:63","level":"error","message":"Error 1265: Data truncated for column 'user_id' at row 1","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:37:07","func":"auth.go:199","level":"error","message":"unable to insert user to databaseerrorError 1265: Data truncated for column 'user_id' at row 1","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:37:36","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:37:36","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:37:38","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:38:11","func":"userRepositoryImpl.go:43","level":"error","message":"Error 1062: Duplicate entry 'admin' for key 'users_userName_uindex'","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:38:40","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:38:40","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:38:44","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:39:25","func":"userRepositoryImpl.go:63","level":"error","message":"Error 1265: Data truncated for column 'user_id' at row 1","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:41:41","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:41:41","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:41:44","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:43:41","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:43:41","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:43:46","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:43:58","func":"userRepositoryImpl.go:63","level":"error","message":"Error 1265: Data truncated for column 'user_id' at row 1","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:46:20","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:46:20","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:46:33","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 15:46:41","func":"auth.go:212","level":"debug","message":"user created successfully","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 16:16:14","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 16:16:14","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 16:16:20","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 16:16:20","func":"auth.go:164","level":"debug","message":"successfully generated tokens","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 16:23:05","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 16:23:05","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 16:23:09","func":"middleware.go:17","level":"debug","message":"user json received","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 16:23:09","func":"auth.go:164","level":"debug","message":"successfully generated tokens","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 17:05:56","func":"app.go:36","level":"info","message":"logger initialized","service":"API-SERVICE"}
+{"@timestamp":"2021/09/10 - 17:05:56","func":"config.go:72","level":"debug","message":"found database url in env, connection string is formed by parsing it","service":"API-SERVICE"}

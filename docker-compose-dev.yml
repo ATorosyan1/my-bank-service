@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  dev_db:
+    image: mysql:8.0.23
+    environment:
+      MYSQL_DATABASE: BankServer
+      MYSQL_USER: bankUser
+      MYSQL_PASSWORD: 12345678
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    volumes:
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    network_mode: host

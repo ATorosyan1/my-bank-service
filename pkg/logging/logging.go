@@ -12,21 +12,24 @@ import (
 )
 
 const (
-	ServiceHider    = "BANK_API"
+	ServiceHider    = "API-SERVICE"
 	LogDir          = "logs"
 	DirPermission   = 0777
-	FileName        = "bank"
+	FileName        = "api_service"
 	TimeFieldKey    = "@timestamp"
 	MessageFieldKey = "message"
 	FileFieldKey    = "service"
 )
 
+// writerHook is a hook that writes logs of specified LogLevels to specified Writer
 type writerHook struct {
 	Writer    []io.Writer
 	LogLevels []logrus.Level
 	Formatter logrus.Formatter
 }
 
+// Fire will be called when some logging function is called with current hook
+// It will format log entry to string and write it to appropriate writer
 func (hook *writerHook) Fire(entry *logrus.Entry) error {
 	line, err := entry.String()
 	if err != nil {
@@ -38,8 +41,22 @@ func (hook *writerHook) Fire(entry *logrus.Entry) error {
 	return err
 }
 
+// Levels define on which log levels this hook would trigger
 func (hook *writerHook) Levels() []logrus.Level {
 	return hook.LogLevels
+}
+
+type Configuration struct {
+	Filename               string       `yaml:"fileName" json:"file_name"`
+	MaxSize                int          `yaml:"maxSize" json:"max_size"`
+	MaxBackups             int          `yaml:"maxBackups" json:"max_backups"`
+	MaxAge                 int          `yaml:"maxAge" json:"max_age"`
+	Level                  logrus.Level `yaml:"level" json:"level"`
+	TimestampFormat        string       `yaml:"timestampFormat" json:"timestamp_format"`
+	DisableLevelTruncation bool         `yaml:"disableLevelTruncation" json:"disable_level_truncation"`
+	DisableColors          bool         `yaml:"disableColors" json:"disable_colors"`
+	FullTimestamp          bool         `yaml:"fullTimestamp" json:"full_timestamp"`
+	ForceColors            bool         `yaml:"forceColors" json:"force_colors"`
 }
 
 var e *logrus.Entry
@@ -56,19 +73,20 @@ func (l *Logger) GetLoggerWithField(k string, v interface{}) Logger {
 	return Logger{l.WithField(k, v)}
 }
 
-func Init() {
+// Init initializes the logger
+func Init(conf *Configuration) {
 	l := logrus.New()
 	l.SetReportCaller(true)
 	l.Formatter = &logrus.TextFormatter{
 		CallerPrettyfier: func(f *runtime.Frame) (string, string) {
 			filename := path.Base(f.File)
-			return fmt.Sprintf("%s:%d", filename, f.Line), " [BANK SERVICE]"
+			return fmt.Sprintf("%s:%d", filename, f.Line), " [API SERVICE]"
 		},
-		TimestampFormat:        "2006/01/02 - 15:04:05",
-		DisableLevelTruncation: true,
-		DisableColors:          false,
-		FullTimestamp:          true,
-		ForceColors:            true,
+		TimestampFormat:        conf.TimestampFormat,
+		DisableLevelTruncation: conf.DisableLevelTruncation,
+		DisableColors:          conf.DisableColors,
+		FullTimestamp:          conf.FullTimestamp,
+		ForceColors:            conf.ForceColors,
 	}
 
 	err := os.MkdirAll(LogDir, DirPermission)
@@ -78,17 +96,17 @@ func Init() {
 	} else {
 
 		infoFileHook, _ := rotatefilehook.NewRotateFileHook(rotatefilehook.RotateFileConfig{
-			Filename:   fmt.Sprintf("./logs/%s.log", FileName),
-			MaxSize:    50, // megabytes
-			MaxBackups: 7,
-			MaxAge:     7, //days
-			Level:      5,
+			Filename:   fmt.Sprintf(conf.Filename, FileName),
+			MaxSize:    conf.MaxSize, // megabytes
+			MaxBackups: conf.MaxBackups,
+			MaxAge:     conf.MaxAge, //days
+			Level:      conf.Level,
 			Formatter: &logrus.JSONFormatter{
 				CallerPrettyfier: func(f *runtime.Frame) (string, string) {
 					filename := path.Base(f.File)
 					return fmt.Sprintf("%s:%d", filename, f.Line), ServiceHider
 				},
-				TimestampFormat: "2006/01/02 - 15:04:05",
+				TimestampFormat: conf.TimestampFormat,
 				FieldMap: logrus.FieldMap{
 					logrus.FieldKeyTime: TimeFieldKey,
 					logrus.FieldKeyMsg:  MessageFieldKey,

@@ -1,10 +1,6 @@
-FROM golang:1.16
-
-WORKDIR /go/src/app
+FROM golang:1.16.3-alpine3.13 AS GO_BUILD
 COPY . .
-
-RUN go version
-
 ENV GOPATH=/
-
+RUN ls
 CMD go run ./cmd/main/main.go
+USER root
